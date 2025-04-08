@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Friday</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <div class="Friday-interface">
+      <div class="reactor-core">
+        <div class="reactor-ring"></div>
+        <div class="reactor-core-inner"></div>
+      </div>
+      <div class="header">
+        <div class="logo">
+          <div class="circle-pulse"></div>
+          <h1>F.R.I.D.A.Y</h1>
+        </div>
+        <div class="status">
+          <div class="status-item">
+            <span class="label">Time:</span>
+            <span id="current-time">00:00:00</span>
+          </div>
+          <div class="status-item">
+            <span class="label">Weather:</span>
+            <span id="current-weather">Loading...</span>
+          </div>
+        </div>
+        <div id="status" class="status-text">Click the mic to speak</div>
+      </div>
+      <!-- Click the mic to speak -->
+
+      <div class="chat-container">
+        <div id="chat-messages" class="messages"></div>
+      </div>
+
+      <div class="input-container">
+        <input type="text" id="command-input" placeholder="Type your command here..." autocomplete="off">
+        <button id="send-button">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M22 2L11 13M22 2L15 22L11 13M11 13L2 9" stroke-linejoin="round" stroke-linecap="round"/>
+          </svg>
+        </button>
+      </div>
+
+      <div class="system-stats">
+        <div class="stat">
+          <span class="label">CPU:</span>
+          <span id="cpu-usage">0%</span>
+        </div>
+        <div class="stat">
+          <span class="label">RAM:</span>
+          <span id="ram-usage">0 GB</span>
+        </div>
+        <div class="stat">
+          <span class="label">Disk:</span>
+          <span id="disk-usage">0%</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="voice-animation" id="voiceAnimation">
+    <div class="voice-waves">
+      <div class="wave"></div>
+      <div class="wave"></div>
+      <div class="wave"></div>
+    </div>
+    <button id="micButton" class="mic-button">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/>
+        <path d="M19 10v2a7 7 0 0 1-14 0v-2"/>
+        <line x1="12" y1="19" x2="12" y2="23"/>
+        <line x1="8" y1="23" x2="16" y2="23"/>
+      </svg>
+    </button>
+  </div>
+
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
